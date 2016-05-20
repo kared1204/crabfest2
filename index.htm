@@ -1,648 +1,400 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>Windom Family</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"> <!--makes it the right size!><!line 8-12 donot remove-->
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <style>
-  body {
-      font: 400 15px Lato, sans-serif;
-      line-height: 1.8;
-      color: blue;/*--light grey*/
-  }
-  h1  {font-size: 35px;
-      text-transform: none;
-      color: #303030;/*dark grey*/
-      font-weight: 900;
-      margin-bottom: 30px;
-      font-variant: small-caps;
-      text-align: center;
-    }
-  h2 {
-      font-size: 35px;
-      text-transform: uppercase;
-      color: #303030;<!--dark grey-->
-      font-weight: 600;
-      margin-bottom: 30px;
-  }
-  h4 {
-      font-size: 19px;
-      line-height: 1.375em;
-      color: #303030;
-      font-weight: 400;
-      margin-bottom: 30px;
-  }  
-  .jumbotron {
-      background-color: blue;
-      color: #333366;
-      padding: 0px;
-      font-family: Montserrat, sans-serif;
-  }
-
-  .ancestor {
-    background:url(images/long-montgomery.jpg);
-    background-repeat: no-repeat;
-    width:auto;
-    padding-top: 10px;
-    margin: 80px 0 0 225px;
-    height: 570px;
-
-  }
-  .container-fluid {
-      padding: 60px 50px;
-  }
-  .bg-grey {
-      background-color: #8A8D8F;
-  }
-  .logo-small {
-      color: #333366;
-      font-size: 50px;
-  }
-  .logo {
-      color: #c41224;
-      font-size: 200px;
-  }
-  .thumbnail {
-      padding: 0 0 15px 0;
-      border: none;
-      border-radius: 0;
-  }
-  .thumbnail img {
-      width: 100%;
-      height: 100%;
-      margin-bottom: 10px;
-  }
-  .carousel-image {
-    margin-left: 30px;
-    padding: 0px;
-  }
-    .carousel-control.right, .carousel-control.left {
-      background-image: none;
-      color: #c41224;/*red*/
-  }
-  .carousel-indicators li {
-      border-color: #c41224;
-  }
-  .carousel-indicators li.active {
-      background-color: #c41224;
-  }
-  
-  /*added backgroung color and color for the font*/
-  
-  .item h4 {
-      font-size: 19px;
-      line-height: 1.375em;
-      font-weight: 400;
-      font-style: italic;
-      margin: 70px 0;
-      background-color: #006699;
-      color: #fff;
-  }
-  .item span {
-      font-style: normal;
-  }
-  .panel /*price-pro-premium*/ {
-      border: 1px solid #c41224; 
-      border-radius:0 !important;
-      transition: box-shadow 0.5s;
-  }
-  .panel:hover {
-      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
-  }
-  .panel-footer .btn:hover /*add pic to top in small circle(sign up button)*/{
-      border: 1px solid #c41224;
-      background-color: #fff !important;
-      color: #c41224;
-  }
-  .panel-heading/*where the basic-pro-premium buttons*/  {
-      color: #fff !important;
-      background-color: #c41224 !important;
-      padding: 25px;
-      border-bottom: 1px solid transparent;
-      border-top-left-radius: 0px;
-      border-top-right-radius: 0px;
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
-  }
-  .panel-footer /*where the price*/{
-      background-color: white !important;
-  }
-  .panel-footer h3 {
-      font-size: 32px;
-  }
-  .panel-footer h4 {
-      color: #aaa;
-      font-size: 14px;
-  }
-  .panel-footer .btn {
-      margin: 15px 0;
-      background-color: #c41224;
-      color: #fff;
-  }
-  .navbar {
-      margin-bottom: 0;
-      background-color: #c41224;
-      z-index: 9999;/*stacked on top building up*/
-      border: 0;
-      font-size: 12px !important;
-      line-height: 1.42857143 !important;
-      letter-spacing: 4px;
-      border-radius: 0;
-      font-family: Montserrat, sans-serif;
-  }
-  .navbar li a, .navbar .navbar-brand {
-      color: #fff !important;
-  }
-  .navbar-nav li a:hover, .navbar-nav li.active a {
-      color: #c41224 !important;
-      background-color: #fff !important;
-  }
-  .navbar-default .navbar-toggle {
-      border-color: transparent;
-      color: #fff !important;
-  }
-  footer .glyphicon {
-      font-size: 20px;
-      margin-bottom: 20px;
-      color: #c41224;
-  }
-  .slideanim {visibility:hidden;}
-  .slide {
-      animation-name: slide;
-      -webkit-animation-name: slide;	
-      animation-duration: 1s;	
-      -webkit-animation-duration: 1s;
-      visibility: visible;			
-  }
-  @keyframes slide {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(70%);
-    } 
-    100% {
-      opacity: 1;
-      -webkit-transform: translateY(0%);
-    }	
-  }
-  @-webkit-keyframes slide {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(70%);
-    } 
-    100% {
-      opacity: 1;
-      -webkit-transform: translateY(0%);
-    }
-  }/*allow web to change to cell phone*/
-  @media screen and (max-width: 768px) {
-    .col-sm-4 {
-      text-align: center;
-      margin: 25px 0;
-    }
-    .btn-lg {
-        width: 100%;
-        margin-bottom: 35px;
-    }
-  }
-  @media screen and (max-width: 480px) {
-    .logo {
-        font-size: 150px;
-    }
-  }
-  </style>
-</head>
-<!--scroll at bottom of page to go "Home"-->
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <!--the small button in top left hand corner-->
-      <a class="navbar-brand" href="#myPage"><img src="images/thesisters.jpg" alt="the sisters" class="img-square" width="60px" height="67px"></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#religion">RELIGION</a></li>
-        <li><a href="#activities">ACTIVITIES</a></li>
-        <li><a href="#pricing">PRICING</a></li>
-        <li><a href="#gallery">GALLERY</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<div class="jumbotron text-center">
-  <div class="ancestor"></div></div></div>
-
-  <h1>Windom Family Reunion 2016</h1> 
+	<title>Blue1647 Class Example 4-Ultimate BBQ</title>
+<script language="JavaScript">
+var i = 0;
+var path2 = new Array();
  
-   <p>We Are Family!</p> 
+// LIST OF IMAGES
+path2[0] = "images/rib1.jpg";
+path2[1] = "images/rib2.jpg";
+path2[2] = "images/rib3.jpg";
+path2[3] = "images/rib4.jpg";
+function swapPicture()
+{
+   document.slide2.src = path2[i];
+   if(i < path2.length - 1) i++; else i = 0;
+   setTimeout("swapPicture()",3000);
+}
+window.onload=swapPicture;
+</script> 
+<style>
+html {
+	overflow: hidden;
+	height: 100%;
+	background: #bcbdc7;
+}
+body {
+	overflow: auto;
+	height: 100%;
+	width: 1100px;
+	margin: 0 auto; /* center */
+	padding:5px;
+	border: 1px solid #474747;
+	border-width: 0 3px;
+	background: #fff;
+	font-family:Arial, Helvetica, sans-serif;
+}
+/*Tynan recognized that each div element had a specific function, address is the menu bar*/
 
-   <!--<form class="form-inline">
-    <input type="email" class="form-control" size="50" placeholder="Email Address" required>
-    <button type="button" class="btn btn-danger">Submit</button>
-  </form>
-</div>-->
-
-<!-- Container (About Section) -->
-<div id="about" class="container-fluid text">
-  <div class="row">
-    <div class="col-sm-8">
-      <h2>About Long-Montgomery Family</h2><br>
-      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p> 
-
-    </div>
-     <div class="col-sm-4">
-      <p><img src="images/grandpaclifford.PNG" alt="Great Grandfather"
-      class="img-square" width="200px height="200px></p>
-
-      <p><img src="images/Beatricebabymildred.jpg" alt="Great Grandmother"
-      class="img-square" width="200px height="200px></p>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid bg-grey">
-  <div class="row">
-    <div class="col-sm-4">
-      <a href="images/IsabelleTaylorMildred.jpg" class="thumbnail">
-      <p><img src="images/IsabelleTaylorMildred.jpg"  class="img-square" 
-      alt="the 1st family store" width="387px height="290px></p></a>
-    </div>
-    <div class="col-sm-8">
-      <h2>Our Values</h2><br>
-      <h4><strong>MISSION:</strong> Our mission as a family is to love and support one another unconditionally to the best of our whole ability.  Whether you are born, in-lawed or adopted into our family, it has been handed down as a loving tradition to nurture and feed the soul of the oldest to the youngest member.  We are all that we have.  And we are going to let it be known that we are a unit.   </h4><br>
-      <p style="color: #fff;"><strong>VISION:</strong> Our vision is not to be rich in money but to be rich in life experiences. </p>
-    </div>
-  </div>
-</div>
-
-<!-- Container (Services Section) -->
-<div id="religion" class="container-fluid text-center">
-  <h2>RELIGION</h2>
-  <h4>How we Serve</h4>As for me and my household we will serve the Lord Jesus Christ! 
-  <br>
-  <!--BEGIN ROW 1 -->
-  <div class="row slideanim">
-    <div class="col-sm-4">
-      <p><img src="images/ronnie.jpg" alt="Ronald Windom"
-       width="250px" height="190px"></p>
-      <span class="glyphicon glyphicon-star logo-small"></span>
-      <h4>POWER</h4>
-      <p>name of the women</p>
-    </div>
-    <!--END ROW 1-->
-
-    <!-- BEGIN ROW 2-->
-    <div class="col-sm-4">
-      <p><img src="images/David.jpg" alt="David Wright" width="250px" height="190px"></p>
-      <span class="glyphicon glyphicon-heart logo-small"></span>
-      <h4>LOVE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <!-- END ROW 2-->
-
-    <!--BEGIN ROW 3 -->
-    <div class="col-sm-4">
-      <p><img src="images/Ann.jpg" alt="Ann McClain" width="250px" height="190px">
-      </p>
-      <span class="glyphicon glyphicon-star logo-small"></span>
-      <h4>JOB DONE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    </div>
-  <!--END ROW 3 -->
-  <br><br>
-  
-  <!-- BEGIN ROW 4 -->
-      <div class="col-sm-4">
-    <p><img src="images/Cathy.jpg" alt="Catherine McClain" width="250px" height="190px"></p>
-      <span class="glyphicon glyphicon-leaf logo-small"></span>
-      <h4>GREEN</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <!--End ROW 4 -->
-
-    <!--BEGIN ROW 5 -->
-    <div class="col-sm-4">
-        <p><img src="images/Jimmy.jpg" alt="James McClain" width="250px" height="190px"></p>
-      <span class="glyphicon glyphicon-certificate logo-small"></span>
-      <h4>CERTIFIED</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-<!--END ROW 5-->
-
-<!--BEGIN ROW 6 -->
-    <div class="col-sm-4">
-        <p><img src="images/Cletus.jpg" alt="Cletus McClain" width="250px" height="190px"></p>
-      <span class="glyphicon glyphicon-wrench logo-small"></span>
-      <h4 style="color:#303030;">HARD WORK</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-<!-- END ROW 6 -->
-
-  <!-- BEGINNING ROW 7-->
-    <div class="row slideanim">
-    <div class="col-sm-4">
-    <p><img src="images/Rick.jpg" alt="Richard McClain" width="250px" height="190px"></p>
-      <span class="glyphicon glyphicon-leaf logo-small"></span>
-      <h4>GREEN</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-<!--END ROW 7-->
-
-<!--BEGIN ROW 8 -->
-    <div class="col-sm-4">
-        <p><img src="images/Glo.jpg" alt="Beverly Gloria McClain" width="250px" height="190px">
-        </p>
-      <span class="glyphicon glyphicon-certificate logo-small"></span>
-      <h4>CERTIFIED</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-<!--END ROW 8 -->
-
-<!-- BEGIN ROW 9 -->
-<div class="col-sm-4">
-        <p><img src="images/mike.png" alt="Michael Fleming" width="250px" height="190px"></p>
-      <span class="glyphicon glyphicon-certificate logo-small"></span>
-      <h4>CERTIFIED</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-</div>
-<!--END ROW 9-->
-
-<!-- Container (Portfolio Section) -->
-<div id="activities" class="container-fluid text-center bg-grey">
-  <h2>ACTIVITIES</h2><br>
-  <h4>July 1, 2016 - July 4, 2016</h4>
-  <p> July 1, Friday
-    Fish Fry<br>Jack fillets, Buffalo, Catfish fillets,coleslaw, spaghetti, green beans, rolls.</br></p><p> July 2, Saturday Picnic <br> Park Reserved, Fish dock Reserved, pool and sprinkler for small children, water kickball for adults</br></p>
-    <p>July 3, Sunday Church Service and Banquet<br>10 am Church Service and 4pm banquet and dinner</br></p>
-    <p>July 4, Monday Free day traveling day<br> You aint got to go home, but you have to get out of here! But I loves ya doe!</br></p>
-
-  <div class="row text-center slideanim">
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="images/thesisters.jpg" 
-        <img-circle alt="Paris" width="400" height="300">
-        <p><strong>Paris</strong></p>
-        <p>Yes, we built Paris</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="images/thesisters.jpg" class="img-circle" alt="New York" width="400" height="300">
-        <p><strong>New York</strong></p>
-        <p>We built New York</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="images/thesisters.jpg" class="img-circle" alt="San Francisco" width="400" height="300">
-        <p><strong>San Francisco</strong></p>
-        <p>Yes, San Fran is ours</p>
-      </div>
-    </div>
-  </div><br>
-  
-  <h2>What our customers say</h2>
-  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
-    
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-      <div class="carousel-image"><img src="images/mildredhighschool.png" alt="Aunt Millie"></div>
-     <div class="carousel-caption">
-        <h4>"Show up at your childs school and let them know who your child belongs too! Let them know "This one right here is mines, you can break this one!"  <br><span style="font-style:normal;">Mildred Boyd</span></h4>
-      </div>
-    </div>
-      <!--2nd carousel-->
-      <div class="item">
-        <div class="carousel-image"><img src="images/catherinehighschool.jpg" alt="Grandma McClain"></div>
-     <div class="carousel-caption">
-        <h4>"Do you know the Lord Jesus Christ? I want to see you in heaven!"<br><span style="font-style:normal;">Catherine McClain, Retired School teacher</span></h4>
-      </div></div>
- <div class="item">
-        <div class="carousel-image"><img src="images/auntelizabeth.jpg" alt="Elizabeth McClain"></div>
-     <div class="carousel-caption">
-        <h4>"Micheal Fleming is my one and only son!"<br><span style="font-style:normal;">Elizabeth Fleming, Housewife, homemaker</span></h4>
-      </div></div>
-<!--3rd carousel-->
-      <div class="item">
-        <div class="carousel-image"><img src="images/elizabethcarter.jpg" alt="Grandma Carter"></div>
-     <div class="carousel-caption">
-        <h4>Come here Mane, let Granda Ma see it!" "Take those shoe strings out right now let me wash them."
-          "You hungry!"
-          <br><span style="font-style:normal;">Elizabeth Carter, Loving Mother to all</span></h4>
-      </div>
-    </div>
-    </div>
-    
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
-
-<!-- Container (Pricing Section) -->
-<div id="pricing" class="container-fluid">
-  <div class="text-center">
-    <h2>Pricing</h2>
-    <h4>Choose a payment plan that works for you</h4><p>If you don't pay you don't eat!   Point blank and period!<br> (Granny said there will be a water faucet and peanut butter and bread doe!  thanks Granny)</br></p>
-  </div>
-  <div class="row slideanim">
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Dad</h1>
-        </div>
-        <div class="panel-body">
-            <p><img src="images/thesisters.jpg" class="img-circle" alt="The Sisters" width="327px" height="327px"></p>
-          <p><strong>20</strong> Lorem</p>
-          <p><strong>15</strong> Ipsum</p>
-          <p><strong>5</strong> Dolor</p>
-          <p><strong>2</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$19</h3>
-          <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>      
-    </div>     
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Mom</h1>
-        </div>
-        <div class="panel-body">
-            <p><img src="images/thesisters.jpg" class="img-rounded" alt="the sisters" width="327px" height="327px"></p>
-          <p><strong>25</strong> Ipsum</p>
-          <p><strong>10</strong> Dolor</p>
-          <p><strong>5</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$29</h3>
-          <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>      
-    </div>       
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Children</h1>
-        </div>
-        <div class="panel-body">
-          <p><img src="images/thesisters.jpg" alt="the sisters" width="327px" height="250px"></p>
-          <p><img src="images/thesisters.jpg" alt="the sisters" width="327px" height="250px"></p>
-          <p><img src="images/thesisters.jpg" alt="the sisters" width="327px" height="250px"></p>
-          <p><img src="images/thesisters.jpg" alt="the sisters" width="327px" height="250px"></p>
-          <p><strong>50</strong> Ipsum</p>
-          <p><strong>25</strong> Dolor</p>
-          <p><strong>10</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$49</h3>
-          <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>      
-    </div>    
-  </div>
-</div>
-
-<!-- Container (Contact Section) -->
-<div id="contact" class="container-fluid bg-grey">
-  <h2 class="text-center">CONTACT</h2>
-  <div class="row">
-    <div class="col-sm-5">
-      <p>Contact us and we'll get back to you within 24 hours.</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span> St. Louis, US</p>
-      <p><span class="glyphicon glyphicon-phone"></span> 314-863-2084</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> kared1204@yahoo.com</p>	   
-    </div>
-    <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Send</button>
-        </div>
-      </div>	
-    </div>
-  </div>
-</div>
-
-<div id="googleMap" style="height:400px;width:100%;"></div>
-
-<!-- Add Google Maps -open google maps, right-click the place or area on the map. Select what's here?
-A card appears at the bottom of the screen with more info. Note: If you're using maps in Lite mode, you won't be able to get the coordinates of a place.-->
-<script src="http://maps.googleapis.com/maps/api/js"></script>
-<script>
-var myCenter = new google.maps.LatLng(38.6512676,-90.2595878);
-
-function initialize() {
-var mapProp = {
-  center:myCenter,
-  zoom:12,
-  scrollwheel:false,
-  draggable:false,
-  mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-var marker = new google.maps.Marker({
-  position:myCenter,
-  });
-
-marker.setMap(map);
+#container-header {
+  float:left; 
+  background-color:#fff;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height:500px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+#address{
+	float:right;
+	width:100%;
+  padding:0;
+  background-color: #930;
+	margin:auto;
+}
+#address li{
+	float:right;
+	width:auto;
+	display:block;
+	padding:0px;
+  background:#930;
+  border-left: 2px solid #fff;
+  text-decoration:none;
+  list-style:none;     
+}
+#address li a{
+	float:right;
+	width:auto;
+	color:#fff;
+	font-size:12px;
+	padding:10px 24px;
+  background:#930;
+  text-decoration:none;
+  list-style:none;
+}
 
-<footer class="container-fluid text-center">
-  <a href="#myPage" title="To Top">
-    <span class="glyphicon glyphicon-chevron-up"></span>
-  </a>
-  <p>Bootstrap Theme Made By <a href="http://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>		
+#address li a:hover{
+	float:right;
+	font-size:12px;
+	padding:10px 24px;
+  text-decoration:none;
+  list-style:none;
+  background:#BCBDC7;
+  color:#161956;
+}
+
+#address li a.active{
+	float:right;
+	font-size:12px;
+	padding:10px 24px;
+  text-decoration:none;
+  list-style:none;
+  background:#161956;
+  color:white;
+}
+#address form{
+	width: auto;
+	color:#fff;
+	font-size:14px;
+	padding:6px 0px;
+	font-size:12px;
+	text-align: center;
+    background:#930;
+}
+.row{
+  width:auto;
+  float: left;
+  height: auto;
+  margin-left: 5px;
+}
+.container {
+  width:500px;
+  margin: 10px 10px 0 5px;
+  padding: 5px; 
+  float:left; 
+  background:#fff;
+  border: 3px solid #930;
+}
+
+  h1, h2, h3, h4, h5, h6{
+  width: auto;
+  height: 20px;
+  padding-bottom:5px;
+  text-align: center;
+  background-color: #930;
+  color: #BCBDC7; 
+}
+.picture{
+  float: left;
+  margin: 10px 0px 10px 20px;
+  border: #930;
+  text-align: right;
+}
+.sign{
+  float: left;
+  margin: 10px 0px 10px 5px;
+  width: 1100px;
+  border: #930;
+  position: center;
+  text-align: center;
+}
+.sign-text{
+  float: left;
+  margin: 10px 0px 10px 0px;
+  padding-top: 125px;
+  border: #930;
+  font-size: 300%;
+  font-weight: bold;
+  color: #930;
+  text-align: center;
+}
+p.text {
+	margin-left: 15px;
+}
+footer{
+  width: 100%;
+  height: 100px;
+  clear: both;
+  padding:10px;
+  background-color: #930;
+  color: #fff;
+  text-align: center;
+}
+
+footer ul{
+  text-align: center;
+}
+
+footer li{
+  float:left;
+  width:150px;
+  height: 35px;
+  display:block;
+  padding:0px 3px 3px 0px;
+  text-decoration:none;
+  list-style:none;
+  text-align: center;    
+}
+footer p{
+  text-align: center;
+}
+/*removed background image and added padding top to move the text content. increased font to 16px made bolder with text align*/
+footer li a{
+  float:left;
+  width:150px;
+  padding-top: 20px;
+  height: 35px;
+  color:#fff;
+  font-size:16px;
+  font-weight: bolder;
+  text-align: center;
+  text-decoration:none;
+  list-style:none;
+}
+/*background hover image is here */
+footer li a:hover{
+  float:left;
+  width:150px;
+  height: 35px;
+  padding-top: 20px;
+  color:#f00;
+  font-size:16px;
+  font-weight: bolder;
+  text-align: center;
+  text-decoration:none;
+  list-style:none;
+}
+</style>
+
+</head>
+<body>
+ <body onload="nickchanger('nick');">   
+<ul id="address">
+  	
+				<li><a class="active" href="index.html">Index</a></li>
+				<li><a href="index.html">Index 1</a></li>
+				<li><a href="index.html">Index 2</a></li>
+				<li><a href="index.html">Index 3</a></li>
+				<li><a href="index.html">Index 4</a></li>
+				<li><IMG SRC="images/imageclock/digitblank.gif" height="30px" border=0 name="hourstens"><IMG SRC="images/imageclock/digitblank.gif" border=0 height="30px" name="hoursones"><IMG SRC="images/imageclock/digitblank.gif" height="30px" border=0 name="colon"><IMG SRC="images/imageclock/digitblank.gif" height="30px" border=0 name="minstens"><IMG SRC="images/imageclock/digitblank.gif" height="30px" border=0 name="minsones"><IMG SRC="images/imageclock/digitblank.gif" height="30px" border=0 name="ampm"></li>
+			</ul>
+<SCRIPT LANGUAGE="JavaScript">
+
+  if (document.images) { 
+    digit1 = new Image; 
+    digit1.src = "images/imageclock/digit1.gif"; 
+  digit2 = new Image; 
+    digit2.src = "images/imageclock/digit2.gif";
+  digit3 = new Image; 
+    digit3.src = "images/imageclock/digit3.gif";
+  digit4 = new Image; 
+    digit4.src = "images/imageclock/digit4.gif";
+  digit5 = new Image; 
+    digit5.src = "images/imageclock/digit5.gif";
+  digit6 = new Image; 
+    digit6.src = "images/imageclock/digit6.gif";
+  digit7 = new Image; 
+    digit7.src = "images/imageclock/digit7.gif";
+  digit8 = new Image; 
+    digit8.src = "images/imageclock/digit8.gif";
+  digit9 = new Image; 
+    digit9.src = "images/imageclock/digit9.gif";
+  digit0 = new Image; 
+    digit0.src = "images/imageclock/digit0.gif";
+  digitam = new Image; 
+    digitam.src = "images/imageclock/digitam.gif";
+  digitpm = new Image; 
+    digitpm.src = "images/imageclock/digitpm.gif";
+  digitcolon = new Image;
+  digitcolon.src = "images/imageclock/digitcolon.gif";
+  digitblank = new Image;
+  digitblank.src = "images/imageclock/digitblank.gif";
+  }
+  
+function UpdateClock(){
+    var time= new Date();
+    hours = time.getHours();
+    mins = time.getMinutes();
+    if (!document.images) return;
+  digit = mins % 10;
+    document.images.minsones.src=eval("digit"+digit+".src");
+  digit = (mins - (mins % 10))/10;
+  document.images.minstens.src=eval("digit"+digit+".src");
+  if (hours > 12)
+    document.images.ampm.src=digitpm.src;
+  else
+    document.images.ampm.src=digitam.src;
+  if (hours > 12) hours = hours - 12;
+  digit = hours % 10;
+  document.images.hoursones.src=eval("digit"+digit+".src");
+  digit = (hours - (hours % 10))/10;
+  document.images.hourstens.src=eval("digit"+digit+".src");
+  document.images.colon.src=digitcolon.src;
+  setTimeout("UpdateClock()",30000);
+}
+UpdateClock();
+</SCRIPT>
+</div>
+
+<div id="container-header"><img height="500" name="slide2" src="images/rib1.jpg" width="100%" />	
+ 
+</div>
+<!--close navigation address-->
+<div class="row">
+<h2>Container-Open</h2>
+<div class="sign"><img src='images/neon-open-sign.png' alt='blinking!' id='blinking_image' /></div>
+
+<SCRIPT LANGUAGE="JavaScript" type="text/javascript">
+var img = document.getElementById('blinking_image');
+
+var interval = window.setInterval(function(){
+    if(img.style.visibility == 'hidden'){
+        img.style.visibility = 'visible';
+    }else{
+        img.style.visibility = 'hidden';
+    }
+}, 1000); //the 1000 here is milliseconds and determines how often the interval should be run.
+</script>
+</div>
+
+
+
+<div class="row">
+<div class="container">
+<h2>Container 1</h2>
+<img src="images/tip1.jpg" alt="Poster 1">
+ 
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur molestie ante, sed convallis ante egestas vel. Cras suscipit lacinia metus, posuere volutpat est efficitur vel. Cras at lorem interdum, efficitur elit sit amet, blandit est. Curabitur eu massa et dolor venenatis consectetur in vitae lacus. Nunc rhoncus metus id vestibulum tincidunt. Cras et facilisis nibh. Nulla rutrum augue vel blandit varius. Vivamus volutpat justo ut velit scelerisque, et dictum turpis pretium. Fusce eget sem mauris. Pellentesque est ligula, porta id malesuada vel, ultricies suscipit ipsum. Nulla leo dui, sollicitudin eget pretium ac, eleifend quis dolor. Duis et felis sapien.</p>
+
+</div>
+       
+
+<div class="container">
+<h2>Container 2</h2>
+<img src="images/tip2.jpg" alt="Poster 2">
+ 
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur molestie ante, sed convallis ante egestas vel. Cras suscipit lacinia metus, posuere volutpat est efficitur vel. Cras at lorem interdum, efficitur elit sit amet, blandit est. Curabitur eu massa et dolor venenatis consectetur in vitae lacus. Nunc rhoncus metus id vestibulum tincidunt. Cras et facilisis nibh. Nulla rutrum augue vel blandit varius. Vivamus volutpat justo ut velit scelerisque, et dictum turpis pretium. Fusce eget sem mauris. Pellentesque est ligula, porta id malesuada vel, ultricies suscipit ipsum. Nulla leo dui, sollicitudin eget pretium ac, eleifend quis dolor. Duis et felis sapien.</p>
+
+</div>
+</div>
+
+<div class="row">
+<h2>Container 3</h2>
+
+ <div class="picture"><img src="images/tip3.JPG" alt="Poster 1"></div>
+ <div class="picture"><img src="images/pull1.jpg" alt="Poster 1"></div>
+ </div>
+
+<div class="row">
+<h2>Container 4</h2>
+
+ <div class="picture"><img src="images/tip4.jpg" alt="Poster 2"></div>
+ <div class="picture">	<img src="images/pull2.jpg" alt="Poster 1"></div>
+</div>
+
+<div class="row">
+<h2>Container 5</h2>
+
+ <div class="picture"><img src="images/pull3.jpg" alt="Poster 2"></div>
+ <div class="picture">	<img src="images/pull4.jpg" alt="Poster 1"></div>
+</div>
+
+
+<div class="row">
+<h2>Container 3</h2>
+
+ <div class="picture"><img src="images/potato.jpg" alt="Poster 1"></div>
+ <div class="picture"><img src="images/tip6.jpg" alt="Poster 3"></div>
+
+</div>
+
+<div class="row">
+<h2>Container Beverages Here</h2>
+
+ <div class="picture"><img src="images/drink-sign.jpg"/></div>
+ 
+ <div class="picture"><img name="slide1" src="images/drink1.jpg"/></div>
+ <script language="JavaScript">
+var i = 0;
+var path1 = new Array();
+ 
+// LIST OF IMAGES
+path1[0] = "images/drink1.jpg";
+path1[1] = "images/drink2.jpg";
+path1[2] = "images/drink3.jpg";
+
+function swapImage()
+{
+   document.slide1.src = path1[i];
+   if(i < path1.length - 1) i++; else i = 0;
+   setTimeout("swapImage()",3000);
+}
+window.onload=swapImage;
+</script>
+</div>
+
+
+
+<footer>
+<p>Class Example 6 of a Static Website &copy; Nick Curlett 2016</p>
+<ul>
+               <li><a href="index.html">Index</a></li>
+                <li><a href="index1.html">Index 1</a></li>
+                <li><a href="index2.html">Index 2</a></li>
+                <li><a href="index3.html">Index 3</a></li>
+                <li><a href="index4.html">Index 4</a></li>
+                <li><a href="index5.html">Index 5</a></li>
+                <li><a href="#">Top</a></li>
+            </ul>
+
 </footer>
 
-<script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-
-    // Prevent default anchor click behavior
-    event.preventDefault();
-
-    // Store hash
-    var hash = this.hash;
-
-    // Using jQuery's animate() method to add smooth page scroll
-    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-    $('html, body').animate({
-      scrollTop: $(hash).offset().top
-    }, 900, function(){
-   
-      // Add hash (#) to URL when done scrolling (default click behavior)
-      window.location.hash = hash;
-    });
-  });
-  
-  $(window).scroll(function() {
-    $(".slideanim").each(function(){
-      var pos = $(this).offset().top;
-
-      var winTop = $(window).scrollTop();
-        if (pos < winTop + 600) {
-          $(this).addClass("slide");
-        }
-    });
-  });
-})
-</script>
-
+<script></script>
 </body>
+
 </html>
